@@ -36,7 +36,7 @@ const seed = async () => {
       purchaseHistories.push({
         userId: userData.id + 1,
         transactionAmount: purchaseData.transactionAmount,
-        dishName: purchaseData.dishName.trim(),
+        dishName: "" + purchaseData.dishName.trim() + "",
         restaurantName: purchaseData.restaurantName,
         createdAt: date,
       });
