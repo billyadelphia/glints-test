@@ -47,7 +47,6 @@ typings/
 /public
 
 .env
-database.js
 
 env/
 
