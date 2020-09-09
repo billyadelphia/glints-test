@@ -22,6 +22,8 @@ npm run pre:migrate && npm run migrate && npm run seed && pm2 start ecosystem.co
 
 ### API Documentation :
 
+This app is hosted in my personal server `http://adelphia.tech:8345`
+
 https://documenter.getpostman.com/view/3429366/TVCjxkzf
 
 Docker Installation :
