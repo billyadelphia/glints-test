@@ -36,7 +36,7 @@ const seed = async () => {
       purchaseHistories.push({
         userId: userData.id + 1,
         transactionAmount: purchaseData.transactionAmount,
-        dishName: purchaseData.dishName,
+        dishName: purchaseData.dishName.trim(),
         restaurantName: purchaseData.restaurantName,
         createdAt: date,
       });
@@ -48,7 +48,7 @@ const seed = async () => {
     await UserPurchaseHistory.bulkCreate(purchaseHistories);
     // process.exit(0);
   } catch (err) {
-    console.log("err", err);
+    console.log("err", err.message);
   }
 
   const restaurantData = [];
@@ -158,7 +158,7 @@ const seed = async () => {
 
     for (const menu of restoData.menu) {
       menus.push({
-        dishName: menu.dishName,
+        dishName: menu.dishName.trim(),
         price: menu.price,
         restaurantId: id,
       });
