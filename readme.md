@@ -19,3 +19,14 @@ cp .env.example .env ( please edit .env file )
 npm install
 npm run pre:migrate && npm run migrate && npm run seed && pm2 start ecosystem.config.js && pm2 logs
 ```
+
+### API Documentation :
+
+https://documenter.getpostman.com/view/3429366/TVCjxkzf
+
+Docker Installation :
+
+```
+docker-compose build
+docker-compose up
+```
