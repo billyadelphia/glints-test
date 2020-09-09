@@ -8,6 +8,7 @@ export default new Sequelize({
   database: config.database,
   username: config.username,
   password: config.password,
+  port: config.port,
   host: config.host,
   timezone: moment().format("Z"),
 });

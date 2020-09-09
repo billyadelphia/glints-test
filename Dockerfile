@@ -1,33 +1,32 @@
-###############################################################################
-###############################################################################
-##                      _______ _____ ______ _____                           ##
-##                     |__   __/ ____|  ____|  __ \                          ##
-##                        | | | (___ | |__  | |  | |                         ##
-##                        | |  \___ \|  __| | |  | |                         ##
-##                        | |  ____) | |____| |__| |                         ##
-##                        |_| |_____/|______|_____/                          ##
-##                                                                           ##
-## description     : Dockerfile for TsED Application                         ##
-## author          : TsED team                                               ##
-## date            : 20190820                                                ##
-## version         : 1.0                                                     ##
-###############################################################################
-###############################################################################
-FROM node:12.13.0-alpine
+FROM node:12.18.3-alpine
 
-RUN apk update && apk add build-base git python
+RUN apk update && apk add bash curl build-base git python
 
 COPY package.json .
-COPY yarn.lock .
+COPY package-lock.json .
+COPY database.js .
+COPY .env .
 COPY ./src ./src
 COPY ./dist ./dist
-COPY ./resources ./resources
-COPY ./spec ./spec
-
-RUN yarn install --production
-
-EXPOSE 8081
-ENV PORT 8081
+COPY ./data ./data
+COPY ./migrations ./migrations
+COPY ecosystem.config.js .
+COPY createDB.js .
+COPY .sequelizerc .
+COPY tsconfig-paths-bootstrap.js .
+COPY tsconfig.json .
+COPY ./seeder ./seeder
+COPY ./data ./data
+COPY wait-for-it.sh /
+RUN npm install pm2 -g
+RUN npm install typescript -g
+RUN npm install ts-node -g
+RUN npm install sequelize-cli -g
+RUN npm install
+# RUN npm run pre:migrate
+# RUN npm run migrate
+# RUN npm run seed
 ENV NODE_ENV production
+CMD /wait-for-it.sh db:3306 -- npm run docker
 
-CMD ["yarn", "start:prod"]
+# CMD ["pm2", "restart", "ecosystem.config.js"]

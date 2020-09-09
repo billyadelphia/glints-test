@@ -1,19 +1,42 @@
-version: '3.3'
+# version: "3.3"
+# services:
+#   mysql:
+#     image: "mysql:8.0.21"
+#     ports:
+#       - "4578:3306"
+#     environment:
+#       MYSQL_ROOT_PASSWORD: admin
+#       MYSQL_USER: test
+#       MYSQL_PASSWORD: test
+#       MYSQL_DATABASE: test
+#   server:
+#     build:
+#       context: .
+#       dockerfile: ./Dockerfile
+#       args:
+#         - http_proxy
+#         - no_proxy
+#     image: "glints-test-billy/server:latest"
+#     links:
+#       - mysql
+#     ports:
+#       - "8081:8081"
+#     stdin_open: true
+#     tty: true
+
+version: "3.3"
 services:
-  server:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-      args:
-        - http_proxy
-        - https_proxy
-        - no_proxy
-    image: 'heroic-backend/server:latest'
+  node:
+    build: ./
+    env_file:
+      - ./.env
     ports:
-      - '8081:8081'
-    stdin_open: true
-    tty: true
-  mongodb:
-    image: 'mongo:4.1'
+      - "${WEB_PORT}:${WEB_PORT}"
+    depends_on:
+      - "${MYSQL_HOST}"
+  db:
+    build: ./db
     ports:
-      - '27017:27017'
+      - "3306:3306"
+    env_file:
+      - ./.env

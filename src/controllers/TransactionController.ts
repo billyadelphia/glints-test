@@ -1,7 +1,7 @@
 import {BodyParams, Controller, Put, Req, Status, $log, Get, Post, HeaderParams} from "@tsed/common";
 import {BuyParam} from "./types";
 import TransactionService from "../services/TransactionService";
-import {response} from "@/helpers/response";
+import {response} from "../helpers/response";
 
 @Controller("/transaction")
 export default class TransactionController {

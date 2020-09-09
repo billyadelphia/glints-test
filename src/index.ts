@@ -1,5 +1,6 @@
 // require("module-alias/register");
 // import "./LoadEnv";
+import "dotenv/config";
 import {$log, ServerLoader} from "@tsed/common";
 import {Server} from "./Server";
 async function bootstrap() {

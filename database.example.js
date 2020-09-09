@@ -1,8 +1,12 @@
+require('dotenv').config()
+
+
 module.exports = {
-    "database": "kujira",
-    "host": "localhost",
+    "database": process.env.MYSQL_DATABASE,
+    "host": process.env.MYSQL_HOST,
+    "port": 3306,
     "username": "root",
-    "password": "",
+    "password": process.env.MYSQL_ROOT_PASSWORD,
     "dialect": "mysql",
     "dialectOptions": {}
 }

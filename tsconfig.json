@@ -28,7 +28,7 @@
     }
   },
   "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules", "./public", "dist", "test"],
+  "exclude": ["node_modules", "./public", "dist", "test", "data"],
   "linterOptions": {
     "exclude": [
       "node_modules",
@@ -37,5 +37,4 @@
       "test"
     ]
   }
-
 }

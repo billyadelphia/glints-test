@@ -1,7 +1,7 @@
-import {BodyParams, Controller, Put, Req, Status, $log, Get, Post, HeaderParams} from "@tsed/common";
+import {BodyParams, Description, Controller, Returns, Put, Req, Status, $log, Get, Post, HeaderParams} from "@tsed/common";
 import {ListParam, PopularRestaurantParam} from "./types";
 import RestaurantService from "../services/RestaurantService";
-import {response} from "@/helpers/response";
+import {response} from "../helpers/response";
 
 @Controller("/restaurant")
 export default class RestaurantController {

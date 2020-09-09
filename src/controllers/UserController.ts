@@ -1,7 +1,7 @@
 import {BodyParams, Controller, Put, Req, Status, $log, Get, Post, HeaderParams} from "@tsed/common";
 import {ListParamUser, ListParamTotalUser} from "./types";
 import UserService from "../services/UserService";
-import {response} from "@/helpers/response";
+import {response} from "../helpers/response";
 
 @Controller("/user")
 export default class UserController {

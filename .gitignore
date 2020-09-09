@@ -45,7 +45,6 @@ typings/
 
 # Project
 /public
-/dist
 
 database.json
 .env

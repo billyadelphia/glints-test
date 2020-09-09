@@ -28,7 +28,7 @@ const superRootDir = process.cwd();
 @ServerSettings({
   rootDir,
   acceptMimes: ["application/json"],
-  port: process.env.PORT || 8080,
+  port: process.env.WEB_PORT || 8080,
   env: process.env.NODE_ENV || "development",
   httpsPort: process.env.HTTPS_PORT || false,
   logger: {

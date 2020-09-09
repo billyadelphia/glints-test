@@ -1,10 +1,10 @@
-import * as userWithPurchaseHistories from "../../data/users_with_purchase_history.json";
-import * as restaurantWithMenu from "../../data/restaurant_with_menu.json";
-import User from "../models/User";
-import UserPurchaseHistory from "../models/UserPurchaseHistory";
-import Restaurant from "../models/Restaurant";
-import RestaurantOpeningHour from "../models/RestaurantOpeningHour";
-import RestaurantMenu from "../models/RestaurantMenu";
+import * as userWithPurchaseHistories from "../data/users_with_purchase_history.json";
+import * as restaurantWithMenu from "../data/restaurant_with_menu.json";
+import User from "../src/models/User";
+import UserPurchaseHistory from "../src/models/UserPurchaseHistory";
+import Restaurant from "../src/models/Restaurant";
+import RestaurantOpeningHour from "../src/models/RestaurantOpeningHour";
+import RestaurantMenu from "../src/models/RestaurantMenu";
 import * as moment from "moment";
 import {Op} from "sequelize";
 

@@ -1,10 +1,10 @@
 module.exports = {
     apps: [{
-        script: 'dist/index.js',
-        interpreter_args: " -r ./tsconfig-paths-bootstrap.js",
-        name: 'kujira-backend'
-            // watch: '.'
-    }],
+        script: "dist/index.js",
+        // interpreter_args: " -r ./tsconfig-paths-bootstrap.js",
+        name: "glints-test-backend",
+        // watch: '.'
+    }, ],
 
     // deploy : {
     //   production : {
