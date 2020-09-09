@@ -9,7 +9,7 @@ mysql.createConnection({
     password: database.password,
 }).then(connection => {
     console.log("dbName", `CREATE DATABASE IF NOT EXISTS ${dbName} ;`)
-    connection.query("CREATE DATABASE IF NOT EXISTS `" + dbName + "` ;").then((res) => {
+    connection.query("CREATE DATABASE IF NOT EXISTS `" + dbName + "` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;").then((res) => {
         console.info("Database create or successfully checked");
         process.exit(0);
     })
