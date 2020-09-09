@@ -21,7 +21,7 @@ module.exports = {
             },
             dishName: {
                 allowNull: false,
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
             },
             restaurantName: {
                 allowNull: true,
