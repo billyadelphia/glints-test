@@ -46,7 +46,6 @@ typings/
 # Project
 /public
 
-database.json
 .env
 database.js
 
