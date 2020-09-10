@@ -18,8 +18,19 @@ git clone git@github.com:billyadelphia/glints-test.git
 cd glints-test
 cp .env.example .env ( please edit .env file )
 npm install
-npm run pre:migrate && npm run migrate && npm run seed && pm2 start ecosystem.config.js && pm2 logs
+npm run pre:migrate && npm run migrate && npm run seed
 ```
+## Serving for development 
+```
+npm run serve
+```
+
+## Serving for production
+```
+pm2 start ecosystem.config.js  
+pm2 logs //optional, for logging
+```
+
 
 ### API Documentation :
 
