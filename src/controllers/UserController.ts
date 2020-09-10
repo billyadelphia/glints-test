@@ -8,14 +8,14 @@ export default class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post("/list")
-  async list(@Req() req: Req, @BodyParams("data") listParam: ListParamUser) {
+  async list(@BodyParams("data") listParam: ListParamUser) {
     const list = await this.userService.list(listParam);
 
     return response({users: list});
   }
 
   @Post("/total")
-  async total(@Req() req: Req, @BodyParams("data") listParam: ListParamTotalUser) {
+  async total(@BodyParams("data") listParam: ListParamTotalUser) {
     const list = await this.userService.totalUser(listParam);
 
     return response({users: list});

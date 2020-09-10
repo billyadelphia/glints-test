@@ -1,7 +1,6 @@
 import {Service} from "@tsed/common";
 import {BuyParam} from "../controllers/types";
 import User from "../models/User";
-import Sequelize, {Op} from "sequelize";
 import UserPurchaseHistory from "../models/UserPurchaseHistory";
 import sequelize from "../config/sequelize";
 import Restaurant from "../models/Restaurant";

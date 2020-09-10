@@ -8,7 +8,7 @@ export default class TransactionController {
   constructor(private readonly transactionService: TransactionService) {}
 
   @Post("/buy")
-  async buy(@Req() req: Req, @BodyParams("data") listParam: BuyParam) {
+  async buy(@BodyParams("data") listParam: BuyParam) {
     const list = await this.transactionService.buy(listParam);
 
     return response({transaction: list});

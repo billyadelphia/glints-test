@@ -8,13 +8,13 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    list(req, listParam) {
+    list(listParam) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const list = yield this.userService.list(listParam);
             return response_1.response({ users: list });
         });
     }
-    total(req, listParam) {
+    total(listParam) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             const list = yield this.userService.totalUser(listParam);
             return response_1.response({ users: list });
@@ -23,16 +23,16 @@ let UserController = class UserController {
 };
 tslib_1.__decorate([
     common_1.Post("/list"),
-    tslib_1.__param(0, common_1.Req()), tslib_1.__param(1, common_1.BodyParams("data")),
+    tslib_1.__param(0, common_1.BodyParams("data")),
     tslib_1.__metadata("design:type", Function),
-    tslib_1.__metadata("design:paramtypes", [Object, Object]),
+    tslib_1.__metadata("design:paramtypes", [Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "list", null);
 tslib_1.__decorate([
     common_1.Post("/total"),
-    tslib_1.__param(0, common_1.Req()), tslib_1.__param(1, common_1.BodyParams("data")),
+    tslib_1.__param(0, common_1.BodyParams("data")),
     tslib_1.__metadata("design:type", Function),
-    tslib_1.__metadata("design:paramtypes", [Object, Object]),
+    tslib_1.__metadata("design:paramtypes", [Object]),
     tslib_1.__metadata("design:returntype", Promise)
 ], UserController.prototype, "total", null);
 UserController = tslib_1.__decorate([

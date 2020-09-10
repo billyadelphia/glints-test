@@ -32,3 +32,9 @@ Docker Installation :
 docker-compose build
 docker-compose up
 ```
+
+### Unit test
+
+```
+npm run test
+```
