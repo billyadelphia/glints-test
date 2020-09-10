@@ -7,6 +7,7 @@ nodejs >= 12
 mysql >= 8
 pm2 ( npm install -g pm2 )
 typescript ( npm install -g typescript )
+ts-node ( npm install -g ts-node )
 sequelize-cli ( npm install -g sequelize-cli )
 ```
 
@@ -26,7 +27,7 @@ This app is hosted in my personal server `http://adelphia.tech:8345`
 
 https://documenter.getpostman.com/view/3429366/TVCjxkzf
 
-Docker Installation :
+### Docker Installation :
 
 ```
 docker-compose build
